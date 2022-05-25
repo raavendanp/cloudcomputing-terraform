@@ -14,7 +14,6 @@ locals {
 
 module "vpc" {
   source = "../../Modules/aws_vpc"
-
 }
 ###################################################
 ### Security Groups

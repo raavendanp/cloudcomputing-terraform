@@ -52,26 +52,6 @@ resource "aws_subnet" "private_subnet" {
     Name = "Private Subnet 1"
   }
 }
-# resource "aws_subnet" "public_subnets" {
-#   vpc_id                  = aws_vpc.vpc.id
-#   count                   = length(var.public_subnets_cidr_block)
-#   cidr_block              = element(var.public_subnets_cidr_block, count.index)
-#   availability_zone       = element(var.availability_zones, count.index)
-#   map_public_ip_on_launch = true
-#   tags = {
-#     Name = "Public Subnet ${element(var.availability_zones, count.index)}"
-#   }
-# }
-# resource "aws_subnet" "private_subnets" {
-#   vpc_id                  = aws_vpc.vpc.id
-#   count                   = length(var.private_subnets_cidr_block)
-#   cidr_block              = element(var.private_subnets_cidr_block, count.index)
-#   availability_zone       = element(var.availability_zones, count.index)
-#   map_public_ip_on_launch = true
-#   tags = {
-#     Name = "Pirvate Subnet ${element(var.availability_zones, count.index)}"
-#   }
-# }
 resource "aws_eip" "nat_eip" {
   vpc        = true
 }
